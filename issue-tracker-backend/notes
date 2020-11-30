@@ -1,0 +1,16 @@
+Project
+has_many :bugs
+    :name - string
+
+Issue
+belongs_to :project
+    :project_id - integer
+    :description - string
+    :working - boolean
+    :done - boolean
+    :kind - string
+    -- :created_at 
+   
+ rails g resource Project name:string --no-test-framework
+ rails g resource Issue project_id:integer description:string working:boolean done:boolean kind:string --no-test-framework
+--> resource: it creates the usual EXCEPT no views 
