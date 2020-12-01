@@ -14,3 +14,9 @@ belongs_to :project
  rails g resource Project name:string --no-test-framework
  rails g resource Issue project_id:integer description:string working:boolean done:boolean kind:string --no-test-framework
 --> resource: it creates the usual EXCEPT no views 
+
+
+  `origins 'example.com'`
+  --> the origin inside config/initialize/cors.rb is the server that your frontend is running on! 
+    - change value to * aka say whatever server origin  this request comes from 
+    - its ok to access to my db
