@@ -10,6 +10,12 @@ belongs_to :project
     :done - boolean
     :kind - string
     -- :created_at 
+
+    # only need to initialize with a :description (auto with project_id)
+    # then will be default added to "backlog" or something
+    # THEN you can click :working or :done, which will update db and move location on screen
+    # in future add :kind drop down menu "bug" "to do" "issue" 
+    # :created_at, tbd
    
  rails g resource Project name:string --no-test-framework
  rails g resource Issue project_id:integer description:string working:boolean done:boolean kind:string --no-test-framework
@@ -20,3 +26,8 @@ belongs_to :project
   --> the origin inside config/initialize/cors.rb is the server that your frontend is running on! 
     - change value to * aka say whatever server origin  this request comes from 
     - its ok to access to my db
+
+Want a Serializer bc we have the relationship
+    - if we dont want to send ALL the attributes, dont add into Serializer and the front end wont see it. 
+            - Project :name 
+            - Issue :description, :working, :done, ... :project_id(?) for now
