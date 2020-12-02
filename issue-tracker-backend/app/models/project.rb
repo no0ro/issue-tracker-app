@@ -4,3 +4,4 @@ class Project < ApplicationRecord
     # keep?
     validates :name, presence: true
 end
+ 
