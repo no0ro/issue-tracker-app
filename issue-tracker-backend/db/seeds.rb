@@ -7,8 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Project.delete_all
-# Bug.delete_all
-project = Project.create(name: "Kombucha Thougthts")
+# Issue.delete_all
+# Then rake db:seed
 
-bug1 = Bug.create(project_id: 1, description: "delete action move inside class")
-bug2 = Bug.create(project_id: 1, description: "binding")
+project1 = Project.create(name: "List App")
+
+issue1 = Issue.create(project_id: 3, description: "remove ',' from items and lists")
+issue2 = Issue.create(project_id: 3, description: "change URL")
