@@ -2,7 +2,9 @@ class Api::V1::ProjectsController < ApplicationController
       # namespaced bc of added constroller folders and routes 
 
     def index 
+     
         @projects = Project.all 
+        # byebug
         render json: @projects
     end 
 
