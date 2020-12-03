@@ -16,7 +16,6 @@ Rails.application.routes.draw do
 end
 
 # Notes: 
-# fetch('http://localhost:3000/api/v1/projects/1/issues')
-# rails s -p 4000 (the way to change ports)
+# # rails s -p 4000 (the way to change ports)
 
 # the routes we set up in ouir rails app, are the routes we'll be making fetch requests to in our frontend 
