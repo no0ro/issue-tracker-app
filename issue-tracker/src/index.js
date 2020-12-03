@@ -14,13 +14,13 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
 // 3. set up store via createStore
-let store = createStore(projectReducer, composeEnhancers(applyMiddleware(thunk))) 
+let myStore = createStore(projectReducer, composeEnhancers(applyMiddleware(thunk))) 
 // createStore takes AT LEAST 2 args([reducers], [initialState - aka any sort of middlewear]) // middleware can be async so should be 1st store enhancer in composition chaain 
 
 
 
 ReactDOM.render(
-  <Provider myStore={store}>
+  <Provider store={myStore}>
     <App />,
   </Provider>,
   document.getElementById('root'));
