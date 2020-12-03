@@ -1,23 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore, applyMiddleware} from 'redux';
-import thunk from 'redux-thunk'
-import {Provider} from 'react-redux' // any component we wrap with {Provider}, gets access to Redux Store
+import {createStore, applyMiddleware, compose} from 'redux'; // import these fn's from the Redux..(obj??). compose lets you mush lots of middlewear functionality together
+import thunk from 'redux-thunk' // action creators  return a function.. instead of an action object!
+import {Provider} from 'react-redux' // Wrap `App` so redux store(the one we pass in) becomes accessible to all Apps kids! 
 
 import App from './App';  
 
-let enhancer = compose()
-// middleware can be async so should be 1st store enhancer in composition chaain 
+// 5. BECOMES WRAPPER!
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// 4. lasso dev tool into all this bc rn they have no way of interacting with us. so middleware do what you do best, middle mans them
+// 4.  compose(imported from 'redux') allows us to combinie multi middlewares!  
+// if dev tools exist, assign the value of them to enhancer.  ELSE assign value of compose to enhancer const
 
-// set up store 
-let store = createStore(reducer, applyMiddleware(thunk))
-// createStore takes AT LEAST 2 args([reducers], [initialState])
+
+// 3. set up store via createStore
+let store = createStore(projectReducer, composeEnhancers(applyMiddleware(thunk))) 
+// createStore takes AT LEAST 2 args([reducers], [initialState - aka any sort of middlewear]) // middleware can be async so should be 1st store enhancer in composition chaain 
+
 
 
 ReactDOM.render(
-  // <React.StrictMode>
+  <Provider myStore={store}>
     <App />,
-  // </React.StrictMode>,
-  document.getElementById('root')
-);
+  </Provider>,
+  document.getElementById('root'));
 // ReactDOM.render(<App />, document.getElementByID('root'));
+
