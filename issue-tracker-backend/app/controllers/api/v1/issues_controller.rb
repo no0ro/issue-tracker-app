@@ -81,8 +81,9 @@ class Api::V1::IssuesController < ApplicationController
         # /api/v1/projects/:project_id/issues   
     end
    
+  
     def issue_params
-        params.require(:issue).permit(:description, :project_id, :working, :done)
+        params.require(:issue).permit(:description, :project_id, :kind, :done, :working)
     end 
 
 end
