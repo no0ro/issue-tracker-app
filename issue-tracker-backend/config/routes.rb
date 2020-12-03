@@ -16,6 +16,6 @@ Rails.application.routes.draw do
 end
 
 # Notes: 
-# # rails s -p 4000 (the way to change ports)
+# # rails s -p 3001 (the way to change ports)
 
 # the routes we set up in ouir rails app, are the routes we'll be making fetch requests to in our frontend 
