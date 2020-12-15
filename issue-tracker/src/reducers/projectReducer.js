@@ -1,5 +1,5 @@
 // just a function! responsible for updating parts of store that have to do with our Project
 
-export default function projectReducer(state = {accounts: []}, action){
+export default function projectReducer(state = {projects: []}, action){
     return state
 }
