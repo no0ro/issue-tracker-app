@@ -6,8 +6,12 @@ import Projects from '../components/Projects'
 import ProjectInput from '../components/ProjectInput'
 
 class ProjectsContainer extends React.Component {
-
-
+ 
+    componentDidMount() {
+        // fetchProjects() // issue is that this call inst connect to Redux Store // SO must access function through props // gave access to fetchProjects fn  when we imported 
+        this.props.fetchProjects() // and add {fetchProjects} to connect to give access
+    }
+    
     render () {
         return (
 
