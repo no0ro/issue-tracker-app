@@ -6,9 +6,10 @@ class ProjectsContainer extends React.Component {
         return (
 
             <div>   
-                Inside ProjectsContainer
+                Inside ProjectsContainer.js!
             </div>
         )
     }
-
 }
+
+export default ProjectsContainer
