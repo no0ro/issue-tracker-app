@@ -1,16 +1,16 @@
 import React from 'react';
-// import {connect} from 'react-redux'
-// import {fetchProjects} from './actions/fetchProjects' 
+import { connect } from 'react-redux';
+import ProjectsContainer from './containers/ProjectsContainer' 
 
 class App extends React.Component {
   
   render() {
     return (
       <div className="App">
-        Inside App.js
+        <ProjectsContainer/>
       </div>
     );
   }
 }
 
-export default App;
+export default connect()(App);
