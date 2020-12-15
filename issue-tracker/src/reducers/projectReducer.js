@@ -4,6 +4,7 @@ export default function projectReducer(state = {projects: []}, action) {
             return {projects: action.payload}
         default:
             return state
+            // always want to return SOME version of our state
     }
 
 }
