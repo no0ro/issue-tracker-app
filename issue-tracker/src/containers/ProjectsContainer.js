@@ -1,4 +1,6 @@
 import React from 'react'
+import Projects from '../components/Projects'
+import ProjectInput from '../components/ProjectInput'
 
 class ProjectsContainer extends React.Component {
 
@@ -6,7 +8,8 @@ class ProjectsContainer extends React.Component {
         return (
 
             <div>   
-                Inside ProjectsContainer.js!
+                <ProjectInput/>
+                <Projects/> 
             </div>
         )
     }
