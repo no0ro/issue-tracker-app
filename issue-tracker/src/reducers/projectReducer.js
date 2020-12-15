@@ -1,3 +1,9 @@
 export default function projectReducer(state = {projects: []}, action) {
-    return state
+    switch (action.type){
+        case 'FETCH_PROJECTS':
+            return {projects: action.payload}
+        default:
+            return state
+    }
+
 }
