@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware, compose} from 'redux'; // compose - mush/combine lots of middlewear functionality together
 import thunk from 'redux-thunk' // action creators  return a function.. instead of an action object!
-import {Provider} from 'react-redux' 
+import {Provider} from 'react-redux' // any child component gets access to store
 import projectReducer from './reducers/projectReducer' 
 
 import App from './App';  
@@ -17,7 +17,7 @@ let myStore = createStore(projectReducer, composeEnhancers(applyMiddleware(thunk
 
 ReactDOM.render(
   <Provider store={myStore}>
-    <App />,
+    <App />
   </Provider>,
   document.getElementById('root'));
 // ReactDOM.render(<App />, document.getElementByID('root'));

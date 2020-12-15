@@ -1,17 +1,9 @@
 import React from 'react';
+// import {connect} from 'react-redux'
+// import {fetchProjects} from './actions/fetchProjects' 
 
 class App extends React.Component {
   
-  // componentDidMount() {
-  //     fetch('http://localhost:3000/api/v1/projects', {
-  //       method: 'GET'
-  //     })
-  //     .then(res => res.json())
-  //     .then(data => console.log(data))
-  // }
-
-
-
   render() {
     return (
       <div className="App">
