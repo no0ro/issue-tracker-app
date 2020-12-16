@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 class IssueInput extends React.Component {
 
@@ -11,4 +12,4 @@ class IssueInput extends React.Component {
     }
 }
 
-export default IssueInput
+export default connect()(IssueInput)
