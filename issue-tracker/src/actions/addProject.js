@@ -12,5 +12,11 @@ export const addProject = (formData) => {
             method: 'POST',
             body: JSON.stringify(formData)
         })
+
+        .then(res => res.json())
+        .then(projectData => dispatch({
+            type: 'Add_PROJECT',
+            payload: projectData
+        })) 
     }
 }
