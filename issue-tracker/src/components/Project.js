@@ -1,4 +1,5 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
 
 // functional bc just diaplaying. doesnt need to update or directly access state
 const Project = (props) => {
