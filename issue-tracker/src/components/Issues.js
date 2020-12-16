@@ -6,7 +6,7 @@ const Issues = (props) => {
     return (
         <div>
             {props.issues && props.issues.map(issue => 
-                <li key={issue.id}>{issue.description}</li>
+                <li key={issue.id}>{issue.description}  {issue.done}  {issue.kind} {issue.working}</li>
             )}
         </div>
     )
