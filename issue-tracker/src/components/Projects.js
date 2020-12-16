@@ -1,5 +1,6 @@
 // list of all our Projects - functional component
 import React from 'react'
+import {Route, Link} from 'react-router-dom'
 import Project from './Project'
 
 const Projects = (props) => {
