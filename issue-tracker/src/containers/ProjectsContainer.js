@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {Route} from 'react-router-dom'
 import {fetchProjects} from '../actions/fetchProjects.js'
 import Projects from '../components/Projects'
+import Project from '../components/Project'
 import ProjectInput from '../components/ProjectInput'
 
 class ProjectsContainer extends React.Component {
@@ -24,6 +25,7 @@ class ProjectsContainer extends React.Component {
             // 10. so we're in the ProjContainer rn, and we're rendering a form component
             <div> 
                 <Route path='/projects/new' component={ProjectInput}/>  
+                <Route path='/projects/:id' render={(routerProps) => <Project {...routerProps} projects={this.props.projects}/>}/>
                 <Route exact path='/projects' render={(routerProps) => <Projects {...routerProps} projects={this.props.projects}/>}/>
             </div>
         )
