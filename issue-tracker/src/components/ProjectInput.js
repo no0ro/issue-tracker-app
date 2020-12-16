@@ -16,14 +16,16 @@ class ProjectInput extends React.Component{
        this.setState({
            // name: e.target.value - abstract name out so its not always pointing to the same obj in mem. ggood for scaling and adding other inputs in future
             [e.target.name]: e.target.value 
-  
        })
     }
 
     handleSubmit = (e) => {
         // to test e - debugger 
         // create new action that addsProject to db 
-
+        e.preventDefault() // dont submit, prevent rerender, let us use the info first
+        this.props.addProject(this.state)
+            // get access to these props from connect()
+            // this.state - pass in state formData to the addProj action
     }
 
     render() {

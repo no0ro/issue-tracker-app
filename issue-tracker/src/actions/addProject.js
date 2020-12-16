@@ -15,7 +15,8 @@ export const addProject = (formData) => {
 
         .then(res => res.json())
         .then(projectData => dispatch({
-            type: 'Add_PROJECT',
+            // we want to Dispatch this new project that we just created. goes straight to reducer
+            type: 'ADD_PROJECT',
             payload: projectData
         })) 
     }
