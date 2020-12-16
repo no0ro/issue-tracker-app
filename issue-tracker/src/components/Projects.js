@@ -9,10 +9,13 @@ const Projects = (props) => {
         // pass state down to Project (got it from props.projects has access to it)
         <div>   
             {props.projects.map(project => 
-                <div key={project.id}> <Project project={project}/> </div>
-                )}
+                <li key={project.id}> 
+                    <Link to={`/projects/${project.id}`}>{project.name}</Link> 
+                </li> )}
         </div>
     )
 }
 
 export default Projects
+
+
