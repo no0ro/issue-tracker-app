@@ -22,7 +22,7 @@ class ProjectsContainer extends React.Component {
             // 9. and then we;re sending those props down to our Projects component ` <Projects projects={this.props.projects}/> ` which is responsible for rendering ALL the projects
             // 10. so we're in the ProjContainer rn, and we're rendering a form component
             <div>   
-                <ProjectInput/>
+                <ProjectInput/> <br></br>
                 <Projects projects={this.props.projects}/> 
             </div>
         )
