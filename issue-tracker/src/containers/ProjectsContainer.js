@@ -24,8 +24,7 @@ class ProjectsContainer extends React.Component {
             // 10. so we're in the ProjContainer rn, and we're rendering a form component
             <div> 
                 <Route path='/projects/new' component={ProjectInput}/>  
-                <Projects projects={this.props.projects}/> 
-                
+                <Route path='/projects' render={(routerProps) => <Projects {...routerProps} projects={this.props.projects}/>}/>
             </div>
         )
     }
