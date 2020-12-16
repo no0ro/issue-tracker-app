@@ -19,5 +19,6 @@ export const addProject = (formData) => {
             type: 'ADD_PROJECT',
             payload: projectData
         })) 
+        // explicitly returned out the dispatch. otherwise make seperate fn
     }
 }
