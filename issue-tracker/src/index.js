@@ -15,6 +15,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let myStore = createStore(projectReducer, composeEnhancers(applyMiddleware(thunk))) 
     // createStore([reducers], [initialState - aka our middlewear]) 
 
+// 1. provider wrapped around App component
 ReactDOM.render(
   <Provider store={myStore}>
     <App />

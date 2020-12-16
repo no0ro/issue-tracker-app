@@ -4,7 +4,6 @@ class Api::V1::ProjectsController < ApplicationController
     def index 
      
         @projects = Project.all 
-        # byebug
         render json: @projects
     end 
 
