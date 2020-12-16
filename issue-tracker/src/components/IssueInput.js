@@ -11,10 +11,14 @@ class IssueInput extends React.Component {
         })
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
     render() {
         return (
             <div>
-                <form >
+                <form onSubmit={this.handleSubmit}>
                     <label> Issue: </label>
                     <input type="text" placeholder="Issue Description" name="description" onChange={this.handleChange}/>
                     <input type="submit"/>
