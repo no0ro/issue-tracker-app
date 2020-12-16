@@ -18,7 +18,7 @@ const Project = (props) => {
           {project ? null : <Redirect to='/projects'/>}
           {project ? project.name : null}
         </h2>
-          <ItemsContainer/>
+          <ItemsContainer project={project}/>
       </div>
     )
 
