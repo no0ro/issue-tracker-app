@@ -1,7 +1,7 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
 
-import ItemsContainer from '../containers/ItemsContainer'
+import IssuesContainer from '../containers/IssuesContainer'
 
 // functional bc just diaplaying. doesnt need to update or directly access state
 const Project = (props) => {
@@ -20,7 +20,7 @@ const Project = (props) => {
           {project ? null : <Redirect to='/projects'/>}
           {project ? project.name : null}
         </h2>
-          <ItemsContainer project={project}/>
+          <IssuesContainer project={project}/>
       </div>
     )
 

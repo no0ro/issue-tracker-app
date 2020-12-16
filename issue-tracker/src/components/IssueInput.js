@@ -1,14 +1,14 @@
 import React from 'react'
 
-class ItemInput extends React.Component {
+class IssueInput extends React.Component {
 
     render() {
         return (
             <div>
-                inside ItemInput.js
+                inside IssueInput.js
             </div>
         )
     }
 }
 
-export default ItemInput
+export default IssueInput
