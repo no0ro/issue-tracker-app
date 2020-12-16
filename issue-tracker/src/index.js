@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware, compose} from 'redux'; // compose - mush/combine lots of middlewear functionality together
 import thunk from 'redux-thunk' // action creators  return a function.. instead of an action object!
 import {Provider} from 'react-redux' // any child component gets access to store
+import {BrowserRouter as Router} from 'react-router-dom'
 import projectReducer from './reducers/projectReducer' 
 
 import App from './App';  
@@ -18,7 +19,9 @@ let myStore = createStore(projectReducer, composeEnhancers(applyMiddleware(thunk
 // 1. provider wrapped around App component
 ReactDOM.render(
   <Provider store={myStore}>
-    <App />
+    <Router>
+      <App />
+    </Router>  
   </Provider>,
   document.getElementById('root'));
 // ReactDOM.render(<App />, document.getElementByID('root'));
