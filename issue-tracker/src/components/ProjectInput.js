@@ -1,6 +1,7 @@
 // form to make new Projects. bc form, needs state, so Class
-
 import React from 'react'
+
+import {connect} from 'react-redux'
 
 class ProjectInput extends React.Component{
     // SET STATE - giving form state and value make it a controlled form.
@@ -19,6 +20,8 @@ class ProjectInput extends React.Component{
     }
 
     handleSubmit = (e) => {
+        // to test e - debugger 
+        // create new action that addsProject to db 
 
     }
 
@@ -36,4 +39,4 @@ class ProjectInput extends React.Component{
     }
 }
 
-export default ProjectInput
+export default connect()(ProjectInput)
