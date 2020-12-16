@@ -6,7 +6,11 @@ class IssueInput extends React.Component {
     render() {
         return (
             <div>
-                inside IssueInput.js
+                <form>
+                    <label> Issue: </label>
+                    <input type="text" placeholder="Issue Description" name="description"/>
+                    <input type="submit"/>
+                </form>
             </div>
         )
     }
