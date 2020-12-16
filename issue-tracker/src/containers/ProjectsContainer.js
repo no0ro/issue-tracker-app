@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import {fetchProjects} from '../actions/fetchProjects.js'
 import Projects from '../components/Projects'
 import Project from '../components/Project'
@@ -24,9 +24,11 @@ class ProjectsContainer extends React.Component {
             // 9. and then we;re sending those props down to our Projects component ` <Projects projects={this.props.projects}/> ` which is responsible for rendering ALL the projects
             // 10. so we're in the ProjContainer rn, and we're rendering a form component
             <div> 
-                <Route path='/projects/new' component={ProjectInput}/>  
-                <Route path='/projects/:id' render={(routerProps) => <Project {...routerProps} projects={this.props.projects}/>}/>
-                <Route exact path='/projects' render={(routerProps) => <Projects {...routerProps} projects={this.props.projects}/>}/>
+                <Switch>
+                    <Route path='/projects/new' component={ProjectInput}/>  
+                    <Route path='/projects/:id' render={(routerProps) => <Project {...routerProps} projects={this.props.projects}/>}/>
+                    <Route exact path='/projects' render={(routerProps) => <Projects {...routerProps} projects={this.props.projects}/>}/>
+                </Switch>
             </div>
         )
     }
