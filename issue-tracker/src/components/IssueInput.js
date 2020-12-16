@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {addIssue} from '../actions/addIssue'
 
 class IssueInput extends React.Component {
 
@@ -13,6 +14,10 @@ class IssueInput extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        this.props.addIssue(this.state, this.props.project.id)
+        this.setState({
+            description: ''
+        })
     }
 
     render() {
@@ -28,4 +33,4 @@ class IssueInput extends React.Component {
     }
 }
 
-export default connect()(IssueInput)
+export default connect(null, {addIssue})(IssueInput)
