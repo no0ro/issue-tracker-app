@@ -5,12 +5,18 @@ class IssueInput extends React.Component {
 
     state = {description: ''}
 
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
     render() {
         return (
             <div>
-                <form>
+                <form >
                     <label> Issue: </label>
-                    <input type="text" placeholder="Issue Description" name="description"/>
+                    <input type="text" placeholder="Issue Description" name="description" onChange={this.handleChange}/>
                     <input type="submit"/>
                 </form>
             </div>
