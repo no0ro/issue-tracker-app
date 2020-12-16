@@ -2,6 +2,7 @@
 import React from 'react'
 
 import {connect} from 'react-redux'
+import {addProject} from '../actions/addProject'
 
 class ProjectInput extends React.Component{
     // SET STATE - giving form state and value make it a controlled form.
@@ -39,4 +40,6 @@ class ProjectInput extends React.Component{
     }
 }
 
-export default connect()(ProjectInput)
+export default connect(null, {addProject})(ProjectInput)
+// component doesnt need to GET state, it just needs to ADD things to state
+// so instead of mapDispatchToProps, we directly import {addProject} -- THUNK -- call dispatch ourselves, inside the addProject fn
