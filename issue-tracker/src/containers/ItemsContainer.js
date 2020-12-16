@@ -8,7 +8,7 @@ class ItemsContainer extends React.Component {
          return (
              <div>
                  <ItemInput/>
-                 <Items/>
+                 <Items items={this.props.project && this.props.project.items}/>
              </div>
          )
      }
