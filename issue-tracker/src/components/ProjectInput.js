@@ -26,6 +26,7 @@ class ProjectInput extends React.Component{
         this.props.addProject(this.state)
             // get access to these props from connect()
             // this.state - pass in state formData to the addProj action
+        this.setState({name: ''}) // clear imput form after submit. impt bc this is a controlled form 
     }
 
     render() {
