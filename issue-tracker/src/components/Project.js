@@ -7,8 +7,10 @@ import ItemsContainer from '../containers/ItemsContainer'
 const Project = (props) => {
   // console.log(props)
   // props.projects is an array. its alllll of our projects
-  let project = props.projects[props.match.params.id - 1] // bc index starts at 0
+  // let project = props.projects[props.match.params.id - 1] // bc index starts at 0
   console.log(project)
+
+    let project = props.projects.filter( project => project.id == props.match.params.id)[0]
 
     return (
         // going to need access to a Project, so pass down props

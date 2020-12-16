@@ -1,10 +1,13 @@
 import React from 'react'
 
 const Items = (props) => {
+    console.log(props.items)
 
     return (
         <div>
-            inside Items.js
+            {props.items && props.items.map(item => 
+                <li key={item.id}>{item.description}</li>
+            )}
         </div>
     )
 }
