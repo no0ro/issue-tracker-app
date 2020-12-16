@@ -7,7 +7,12 @@ class ProjectInput extends React.Component{
     render() {
         return (
             <div>   
-                inside ProjectInput.js!
+                <form>
+                    <label> Project Name: </label>
+                    <input type='text' placeholder="Name"/> 
+                    
+
+                </form>
             </div>
         )
 
