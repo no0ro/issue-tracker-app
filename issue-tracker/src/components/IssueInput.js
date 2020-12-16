@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 
 class IssueInput extends React.Component {
 
+    state = {description: ''}
+
     render() {
         return (
             <div>
