@@ -8,7 +8,7 @@ const Projects = (props) => {
         // pass state down to Project (got it from props.projects has access to it)
         <div>   
             {props.projects.map(project => 
-                <li key={project.id}> <Project project={project}/> </li>
+                <div key={project.id}> <Project project={project}/> </div>
                 )}
         </div>
     )
