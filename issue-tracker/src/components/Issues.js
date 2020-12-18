@@ -1,9 +1,10 @@
 import React from 'react'
 
+
 const Issues = (props) => {
     console.log(props.issues)
 
-    handleDelete = (issue) => {
+const handleDelete = (issue) => {
         this.props.deleteIssue(issue.id, issue.project_id)
     }
 
