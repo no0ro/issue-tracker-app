@@ -7,7 +7,7 @@ class IssuesContainer extends React.Component {
      render () {
          return (
              <div>
-                 <IssueInput/>
+                 <IssueInput project={this.props.project}/>
                  <Issues issues={this.props.project && this.props.project.issues}/>
              </div>
          )
