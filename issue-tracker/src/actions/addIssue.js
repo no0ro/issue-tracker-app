@@ -9,7 +9,14 @@ export const addIssue = (issue, projectId) => {
             body: JSON.stringify(issue)
         })
         .then(res => res.json())
-        .then(project => dispatch({type: 'ADD_ISSUE', payload: project}))
+        .then(project => {
+            if (project.error) {
+                alert(project.error)
+            } else {
+                dispatch({type: 'ADD_ISSUE', payload: project})
+            }
+        }
+        )
     }
 
 }
