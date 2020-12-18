@@ -25,7 +25,7 @@ class IssueInput extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label> Issue: </label>
-                    <input type="text" placeholder="Issue Description" name="description" onChange={this.handleChange}/>
+                    <input type="text" name="description" value={this.state.description} placeholder="Issue Description"  onChange={this.handleChange}/>
                     <input type="submit"/>
                 </form>
             </div>
