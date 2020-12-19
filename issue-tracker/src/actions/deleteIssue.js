@@ -1,9 +1,9 @@
-export const deleteIssue = () => {
+export const deleteIssue = (issueId, projectId) => {
     return (dispatch) => {
-        return fetch(`http://`, {
+        return fetch(`http://localhost:3000/api/v1/projects/${projectId}/issues/${issueId}`, {
             method: 'DELETE'
         })
         .then(res => res.json())
-        .then()
+        .then(project => dispatch({type: 'DELETE_ISSUE', payload: project}))
     }
 }
