@@ -1,4 +1,4 @@
-export const addProject = (data) => {
+export const editProject = (data) => {
     return (dispatch) => {
         fetch(`http://localhost:3000/api/v1/projects/${data.id}`, {
             headers: {
