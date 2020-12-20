@@ -7,7 +7,7 @@ const NavBar = (props) => {
     return (
         <div>
             <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">Issue Tracker</Navbar.Brand>
+            <Navbar.Brand href="/">Issue Tracker</Navbar.Brand>
                 {/* <Nav className="mr-auto"> */}
                     <Link to='/'>Homepage</Link>
                     <Link to='/projects' style={{paddingRight: '10px'}}> All Projects</Link>
