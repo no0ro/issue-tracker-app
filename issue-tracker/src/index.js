@@ -5,8 +5,8 @@ import thunk from 'redux-thunk' // action creators  return a function.. instead 
 import {Provider} from 'react-redux' // any child component gets access to store
 import {BrowserRouter as Router} from 'react-router-dom'
 import projectReducer from './reducers/projectReducer' 
-
 import App from './App';  
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
