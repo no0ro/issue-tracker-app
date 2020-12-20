@@ -37,18 +37,23 @@ class ProjectInput extends React.Component{
 
     render() {
         return (
-            <Card body>
-            <div>   
-                <Form onSubmit={this.handleSubmit}>
-                    <label> Project Name: </label>
-                    <input type='text' placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange}/><br/>
-                    <Button variant="dark" type="submit">
-                        Add Project
-                    </Button>
-                    {/* <input type="submit"/> */}
+            
+            <Card style={{ width: '18rem' }} >
+                <Card.Body >
+                <div>   
+                    <Form onSubmit={this.handleSubmit}>
+                        <Card.Title> Project Name: </Card.Title>
+                        <input type='text' placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange}/>
+                        <br></br>
 
-                </Form>
-            </div>
+                        <br/>
+                        <Button variant="dark" type="submit" size="sm">
+                            Add Project
+                        </Button>
+                        {/* <input type="submit"/> */}
+                    </Form>
+                </div>
+                </Card.Body>
             </Card>
         )
     }

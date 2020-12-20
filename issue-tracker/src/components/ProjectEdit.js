@@ -1,6 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {editProject} from '../actions/editProject'
+import Card from 'react-bootstrap/Card'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 class ProjectEdit extends React.Component {
 
@@ -26,14 +29,22 @@ class ProjectEdit extends React.Component {
 
     render() {
         return(
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label> Project Name: </label>
-                    <input type='text' placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange}/> 
-                    <input type="submit"/>
-                </form>
+            // <Card className="text-center">
+            <Card style={{ width: '18rem' }} >
+                <Card.Body >
+                <div>
+                    <Form onSubmit={this.handleSubmit}>
+                        <Card.Title> Project Name: </Card.Title>
+                        <input type='text' placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange}/> 
+                        <Button variant="dark" type="submit" size="sm">
+                            Edit Project
+                        </Button>
+                        {/* <input type="submit"/> */}
+                    </Form>
 
-            </div>
+                </div>
+                </Card.Body>
+            </Card>
         )
     }
 }

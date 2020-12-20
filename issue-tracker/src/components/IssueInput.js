@@ -1,6 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addIssue} from '../actions/addIssue'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 
 class IssueInput extends React.Component {
 
@@ -24,13 +27,21 @@ class IssueInput extends React.Component {
 
     render() {
         return (
+            <Card style={{ width: '18rem' }}>
+            <Card.Body>
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label> Issue: </label>
+                <Form onSubmit={this.handleSubmit}>
+                    <Card.Title> Issue: </Card.Title>
                     <input type="text" name="description" placeholder="Issue Description"  value={this.state.description} onChange={this.handleChange}/>
-                    <input type="submit"/>
-                </form>
+                    <Button variant="dark" type="submit" size="sm">
+                        Add Issue
+                    </Button>
+                    {/* <input type="submit"/> */}
+                </Form>
             </div>
+            
+            </Card.Body>
+            </Card>
         )
     }
 }
