@@ -6,6 +6,7 @@ import Projects from '../components/Projects'
 import Project from '../components/Project'
 import ProjectInput from '../components/ProjectInput'
 import NavBar from '../components/NavBar'
+import Homepage from '../components/Homepage'
 
 class ProjectsContainer extends React.Component {
    // 2ish. accessing props inside the ProjectsContainer component
@@ -29,6 +30,7 @@ class ProjectsContainer extends React.Component {
                         <Route path='/projects/new' component={ProjectInput}/>  
                         <Route path='/projects/:id' render={(routerProps) => <Project {...routerProps} projects={this.props.projects}/>}/>
                         <Route exact path='/projects' render={(routerProps) => <Projects {...routerProps} projects={this.props.projects}/>}/>
+                        <Route exact path='/' component={Homepage}/>
                     </Switch>
             </div>
         )
