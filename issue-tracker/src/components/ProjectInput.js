@@ -1,12 +1,13 @@
 // form to make new Projects. bc form, needs state, so Class
 import React from 'react'
-
 import {connect} from 'react-redux'
 import {addProject} from '../actions/addProject'
 
 class ProjectInput extends React.Component{
     // SET STATE - giving form state and value make it a controlled form.
-    state = { name: ''} 
+    state = { 
+        name: ''
+    } 
         // could use constructor syntax instead
         // LOCAL state. not using redux store. 
 
@@ -26,7 +27,9 @@ class ProjectInput extends React.Component{
         this.props.addProject(this.state)
             // get access to these props from connect()
             // this.state - pass in state formData to the addProj action
-        this.setState({name: ''}) // clear imput form after submit. impt bc this is a controlled form 
+        this.setState({
+            name: ''
+        }) // clear imput form after submit. impt bc this is a controlled form 
     }
 
     render() {
@@ -34,12 +37,11 @@ class ProjectInput extends React.Component{
             <div>   
                 <form onSubmit={this.handleSubmit}>
                     <label> Project Name: </label>
-                    <input type='text' placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange}/> 
+                    <input type='text' placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange}/><br/>
                     <input type="submit"/>
                 </form>
             </div>
         )
-
     }
 }
 
