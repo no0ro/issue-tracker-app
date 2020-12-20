@@ -2,6 +2,19 @@ import React from 'react'
 
 class ProjectEdit extends React.Component {
 
+    state = {
+        name: ''
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        let project = {...this.state, id: this.props.project.id}
+        this.props.editProject(project)
+        this.setState({
+            name: ''
+        })
+    }
+
     render() {
         return(
             <div>
