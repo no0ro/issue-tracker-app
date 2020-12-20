@@ -6,7 +6,7 @@ class App extends React.Component {
   // 2. renders Projects Container 
   render() {
     return (
-      <div className="App">
+      <div style={{padding: '15px'}} className="App">
         <ProjectsContainer/>
       </div>
     );

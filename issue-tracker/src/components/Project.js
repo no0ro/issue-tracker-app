@@ -15,10 +15,11 @@ const Project = (props) => {
     return (
         // going to need access to a Project, so pass down props
         // CANNOT RENDER AN OBJ inside jsx tags
+        //  {project ? project.name : null} --> interpolated Project Name
       <div>
         <h2>
           {project ? null : <Redirect to='/projects'/>}
-          {project ? project.name : null}
+          {project ? project.name : null} 
         </h2>
           <IssuesContainer project={project}/><br></br>
           <h3> Edit Project </h3>
