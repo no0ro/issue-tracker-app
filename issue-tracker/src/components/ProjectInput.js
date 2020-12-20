@@ -2,6 +2,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addProject} from '../actions/addProject'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 
 class ProjectInput extends React.Component{
     // SET STATE - giving form state and value make it a controlled form.
@@ -34,13 +37,19 @@ class ProjectInput extends React.Component{
 
     render() {
         return (
+            <Card body>
             <div>   
-                <form onSubmit={this.handleSubmit}>
+                <Form onSubmit={this.handleSubmit}>
                     <label> Project Name: </label>
                     <input type='text' placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange}/><br/>
-                    <input type="submit"/>
-                </form>
+                    <Button variant="dark" type="submit">
+                        Add Project
+                    </Button>
+                    {/* <input type="submit"/> */}
+
+                </Form>
             </div>
+            </Card>
         )
     }
 }
