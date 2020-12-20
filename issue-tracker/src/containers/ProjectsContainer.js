@@ -1,8 +1,7 @@
 import React from 'react'
-import { connect } from 'react-redux';
-
+import {connect} from 'react-redux';
 import {Route, Switch} from 'react-router-dom'
-import {fetchProjects} from '../actions/fetchProjects.js'
+import {fetchProjects} from '../actions/fetchProjects'
 import Projects from '../components/Projects'
 import Project from '../components/Project'
 import ProjectInput from '../components/ProjectInput'

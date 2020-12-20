@@ -6,7 +6,8 @@ const Issues = (props) => {
     // console.log(props.issues)
 
     const handleDelete = (issue) => {
-            props.deleteIssue(issue.id, issue.project_id);
+        // debugger
+        props.deleteIssue(issue.id, issue.project_id);
     };
 
     return (
