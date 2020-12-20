@@ -4,7 +4,9 @@ import {addIssue} from '../actions/addIssue'
 
 class IssueInput extends React.Component {
 
-    state = {description: ''}
+    state = {
+        description: ''
+    }
 
     handleChange = (e) => {
         this.setState({
@@ -25,7 +27,7 @@ class IssueInput extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label> Issue: </label>
-                    <input type="text" name="description" value={this.state.description} placeholder="Issue Description"  onChange={this.handleChange}/>
+                    <input type="text" name="description" placeholder="Issue Description"  value={this.state.description} onChange={this.handleChange}/>
                     <input type="submit"/>
                 </form>
             </div>
