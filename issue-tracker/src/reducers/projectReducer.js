@@ -24,9 +24,17 @@ export default function projectReducer(state = {projects: []}, action) {
                 }
             })
             return {...state, projects: projectsTwo}
+        case 'EDIT_PROJECT':
+            let projectsThree = state.projects.map(project => {
+                if (project.id === action.payload.id) {
+                    return action.payload
+                } else {
+                    return project
+                }
+            })
+            return {...state, projects: projectsThree}
         default:
             return state
             // always want to return SOME version of our state
     }
-
 }
