@@ -1,10 +1,19 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {editProject} from '../actions/editProject'
 
 class ProjectEdit extends React.Component {
 
     state = {
         name: ''
     }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
 
     handleSubmit = (e) => {
         e.preventDefault()
@@ -29,4 +38,4 @@ class ProjectEdit extends React.Component {
     }
 }
 
-export default ProjectEdit
+export default connect(null, {editProject})(ProjectEdit)
