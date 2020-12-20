@@ -1,5 +1,6 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
+import ProjectEdit from './ProjectEdit'
 
 import IssuesContainer from '../containers/IssuesContainer'
 
@@ -19,7 +20,9 @@ const Project = (props) => {
           {project ? null : <Redirect to='/projects'/>}
           {project ? project.name : null}
         </h2>
-          <IssuesContainer project={project}/>
+          <IssuesContainer project={project}/><br></br>
+          <h3> Edit Project </h3>
+          <ProjectEdit project={project}/>
       </div>
     )
 
