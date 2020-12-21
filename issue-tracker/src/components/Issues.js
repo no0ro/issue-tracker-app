@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {deleteIssue} from '../actions/deleteIssue'
 import IssuesWorking from '../components/IssuesWorking'
-
+import Button from 'react-bootstrap/Button'
 
 
 const Issues = (props) => {
@@ -30,17 +30,22 @@ const Issues = (props) => {
         <div onClick={() => onChange()}>
             {props.issues && props.issues.map( (issue) => 
                 <li key={issue.id}>
-                    {issue.description} - {issue.working}  {issue.kind} <button onClick={() => handleDelete(issue)}> X </button>
+                    {issue.description} -  {issue.kind} - {issue.working}  
+                    <Button variant="dark" size="sm" onClick={() => handleDelete(issue)}> x </Button>
                 </li>
+                
             )}
-            <IssuesWorking   />
+            <IssuesWorking />
 
         </div>
     );
 }
 
 export default connect(null, {deleteIssue})(Issues)
-//{/* <li key={issue.id}>{issue.description}  {issue.done}  {issue.kind} {issue.working}</li> */}
+// connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
+// component doesnt need to GET state, it just needs to ADD things to state
+
 
 // if working === true, pass the component to IssuesWorking to Render there 
-// if done === true, pass component to done component
+
+
