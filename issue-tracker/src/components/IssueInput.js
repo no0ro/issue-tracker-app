@@ -8,7 +8,10 @@ import Card from 'react-bootstrap/Card'
 class IssueInput extends React.Component {
 
     state = {
-        description: ''
+        description: '',
+        working: true,
+        done: true,
+        kind: 'bug'
     }
 
     handleChange = (e) => {
@@ -21,18 +24,53 @@ class IssueInput extends React.Component {
         e.preventDefault()
         this.props.addIssue(this.state, this.props.project.id)
         this.setState({
-            description: ''
+            description: '',
+            working: true,
+            done:  true,
+            kind: 'bug'
         })
     }
 
+    
+    // <input type="checkbox"  name="working" value={this.state.working} onChange={this.handleChange}/>
+    // <input type="checkbox" name="done"  value={this.state.done} onChange={this.handleChange}/>
+  
+    // {['checkbox'].map((type) => (
+    //     <div key={`inline-${type}`} className="mb-3">
+    //     <Form.Check inline label="working" type={type} id={`inline-${type}-working`} />
+    //     <Form.Check inline label="done" type={type} id={`inline-${type}-done`} />
+    //     </div>
+    // ))}
+
+    // <div key={`inline-${'checkbox'}`} className="mb-3">
+    // <Form.Check inline label="working" type={'checkbox'} id={`inline-${'checkbox'}-working`} value={this.state.working} onChange={this.handleChange} />
+    // <Form.Check inline label="done" type={'checkbox'} id={`inline-${'checkbox'}-done`} value={this.state.done} onChange={this.handleChange} />
+    // </div>
+
+
+    // checked
     render() {
         return (
             <Card style={{ width: '18rem' }}>
             <Card.Body>
             <div>
                 <Form onSubmit={this.handleSubmit}>
-                    <Card.Title> Issue: </Card.Title>
+                <Form.Group controlId="">
+                    <Card.Title> Add a New Issue: </Card.Title>
                     <input type="text" name="description" placeholder="Issue Description"  value={this.state.description} onChange={this.handleChange}/>
+           
+                        <div key={`inline-${'checkbox'}`} className="mb-3">
+                        <Form.Check inline label="working" type={'checkbox'} id={`inline-${'checkbox'}-working`} value={this.state.working} onChange={this.handleChange} />
+                        <Form.Check inline label="done" type={'checkbox'} id={`inline-${'checkbox'}-done`} value={this.state.done}  onChange={this.handleChange} />
+                        </div>
+                    
+                </Form.Group>
+                    <select name="kind" value={this.state.kind} onChange={this.handleChange}>
+                        <option>bug</option>
+                        <option>task</option>
+                        <option>feature</option>
+                    </select>
+                    <br></br>
                     <Button variant="dark" type="submit" size="sm">
                         Add Issue
                     </Button>
@@ -47,3 +85,6 @@ class IssueInput extends React.Component {
 }
 
 export default connect(null, {addIssue})(IssueInput)
+
+// The presence of the "checked" property specifies the status. The value is irrelevant/not needed.
+// <input type="checkbox" checked="checked" />
