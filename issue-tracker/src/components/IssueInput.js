@@ -10,7 +10,6 @@ class IssueInput extends React.Component {
     state = {
         description: '',
         working: true,
-        done: true,
         kind: 'bug'
     }
 
@@ -26,45 +25,30 @@ class IssueInput extends React.Component {
         this.setState({
             description: '',
             working: true,
-            done:  true,
             kind: 'bug'
         })
     }
-
-    
-    // <input type="checkbox"  name="working" value={this.state.working} onChange={this.handleChange}/>
-    // <input type="checkbox" name="done"  value={this.state.done} onChange={this.handleChange}/>
-  
-    // {['checkbox'].map((type) => (
-    //     <div key={`inline-${type}`} className="mb-3">
-    //     <Form.Check inline label="working" type={type} id={`inline-${type}-working`} />
-    //     <Form.Check inline label="done" type={type} id={`inline-${type}-done`} />
-    //     </div>
-    // ))}
-
+   
+ 
     // <div key={`inline-${'checkbox'}`} className="mb-3">
     // <Form.Check inline label="working" type={'checkbox'} id={`inline-${'checkbox'}-working`} value={this.state.working} onChange={this.handleChange} />
     // <Form.Check inline label="done" type={'checkbox'} id={`inline-${'checkbox'}-done`} value={this.state.done} onChange={this.handleChange} />
     // </div>
 
-
-    // checked
     render() {
         return (
             <Card style={{ width: '18rem' }}>
             <Card.Body>
             <div>
                 <Form onSubmit={this.handleSubmit}>
-                <Form.Group controlId="">
                     <Card.Title> Add a New Issue: </Card.Title>
                     <input type="text" name="description" placeholder="Issue Description"  value={this.state.description} onChange={this.handleChange}/>
            
                         <div key={`inline-${'checkbox'}`} className="mb-3">
                         <Form.Check inline label="working" type={'checkbox'} id={`inline-${'checkbox'}-working`} value={this.state.working} onChange={this.handleChange} />
-                        <Form.Check inline label="done" type={'checkbox'} id={`inline-${'checkbox'}-done`} value={this.state.done}  onChange={this.handleChange} />
                         </div>
                     
-                </Form.Group>
+         
                     <select name="kind" value={this.state.kind} onChange={this.handleChange}>
                         <option>bug</option>
                         <option>task</option>

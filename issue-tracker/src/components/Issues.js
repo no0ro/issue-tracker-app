@@ -1,18 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {deleteIssue} from '../actions/deleteIssue'
+import IssuesWorking from '../components/IssuesWorking'
+
+
 
 const Issues = (props) => {
-    // console.log(props.issues)
-
-        // constructor(props){
-    //     super(props)
-    //     this.state = {
-
-    //     }
-    // }
-    
-
     // create fn to handle event
     const onChange = () => {
         alert("onChange Test")
@@ -26,10 +19,22 @@ const Issues = (props) => {
         props.deleteIssue(issue.id, issue.project_id);
     };
 
+    // dont need to iterate through, bc this fn will only be called on submit....so probs needs to not be in here?
+    // const handleStatue = (issue) => {
+    //     if (this.props.working === true) {// or exists? 
+    //         // pass to IssuesWorking
+    //     }
+    // }
+
     return (
         <div onClick={() => onChange()}>
-            {props.issues && props.issues.map(issue => <li key={issue.id}>{issue.description} <button onClick={() => handleDelete(issue)}> Issue Resolved </button></li>
+            {props.issues && props.issues.map( (issue) => 
+                <li key={issue.id}>
+                    {issue.description} - {issue.working}  {issue.kind} <button onClick={() => handleDelete(issue)}> X </button>
+                </li>
             )}
+            <IssuesWorking   />
+
         </div>
     );
 }
