@@ -10,7 +10,14 @@
 # Issue.delete_all
 # Then rake db:seed
 
-project1 = Project.create(name: "List App")
+# project1 = Project.create(name: "List App")
 
-issue1 = Issue.create(project_id: 3, description: "remove ',' from items and lists")
-issue2 = Issue.create(project_id: 3, description: "change URL")
+# issue1 = Issue.create(project_id: 3, description: "remove ',' from items and lists", kind: "bug" )
+# issue2 = Issue.create(project_id: 3, description: "change URL", kind: "feature" )
+# issue3 = Issue.create(project_id: 3, description: "bootstrap", kind: "task" )
+
+
+
+# issue1 = Issue.create(project_id: 3, description: "remove ',' from items and lists", working: true, done: false, kind: "bug" )
+# issue2 = Issue.create(project_id: 3, description: "change URL", working: false, done: false, kind: "feature" )
+# issue3 = Issue.create(project_id: 3, description: "bootstrap", working: false, done: true, kind: "task" )
