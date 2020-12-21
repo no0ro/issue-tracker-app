@@ -63,12 +63,15 @@ class Api::V1::IssuesController < ApplicationController
     end 
 
     def destroy 
-        @issue = Issue.find(params[:id])
+        @issue = Issue.find(params["id"])
         # @project = Project.find(@issue.project_id) # do i need this?
         @issue.destroy 
         # @issue.destroy
 
-        #  --need?-- head :no_content, status: :ok 
+        # head :no_content, status: :ok 
+        render json: @project
+       
+
     end 
 
 
