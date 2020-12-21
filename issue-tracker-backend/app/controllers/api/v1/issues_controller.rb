@@ -14,7 +14,7 @@ class Api::V1::IssuesController < ApplicationController
     def index 
         # dont want all issues associated everywhere, just want the one associated with a specific project
             # first figure out the project, and then get that projects issues
-        # @33 since our issues are associated with a project, we can use that project to access those specific issues associated with that project
+        # since our issues are associated with a project, we can use that project to access those specific issues associated with that project
         
         @issues = @project.issues 
         render json: @issues  # saying render these issues as JSON
@@ -38,7 +38,8 @@ class Api::V1::IssuesController < ApplicationController
             # @issue = @project.issues.build(issue_params) -- tested in console, build works the same
         
         if @issue.save 
-            render json: @issue
+            # render json: @issue
+            render json: @project
         else 
             render json: {error: 'Issue creating an issue :)'}
         end 
