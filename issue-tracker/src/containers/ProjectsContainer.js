@@ -55,4 +55,7 @@ export default connect(mapStateToProps, {fetchProjects})(ProjectsContainer)
 // connect(GET from store, pass actioncreators/reducers)(ProjectsContainer)
 // {fetchProjects} - equivelent to mapping dispatchToProps 
 
+// connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
+// component doesnt need to GET state, it just needs to ADD things to state
+
 // ask, do we want to map state to props? or dispatch to props? or both?

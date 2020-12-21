@@ -21,7 +21,7 @@ class ProjectEdit extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
         let project = {...this.state, id: this.props.project.id}
-        this.props.editProject(project)
+        this.props.editProject(project) // action
         this.setState({
             name: ''
         })
@@ -50,3 +50,5 @@ class ProjectEdit extends React.Component {
 }
 
 export default connect(null, {editProject})(ProjectEdit)
+// connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
+// component doesnt need to GET state, it just needs to ADD things to state

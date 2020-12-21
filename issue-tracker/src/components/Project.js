@@ -1,3 +1,5 @@
+// PARENT: ProjectsContainer
+// CHILDREN: ProjectEdit + IssuesContainer
 import React from 'react'
 import {Redirect} from 'react-router-dom'
 import ProjectEdit from './ProjectEdit'
@@ -22,7 +24,9 @@ const Project = (props) => {
           {project ? project.name : null} 
         </h2>
           <IssuesContainer project={project}/><br></br>
-          <h3> Edit Project </h3>
+          <br></br>
+          <br></br>
+          <h5> Edit Project </h5>
           <ProjectEdit project={project}/>
       </div>
     )

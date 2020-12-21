@@ -37,7 +37,6 @@ class ProjectInput extends React.Component{
 
     render() {
         return (
-            
             <Card style={{ width: '18rem' }} >
                 <Card.Body >
                 <div>   
@@ -60,5 +59,6 @@ class ProjectInput extends React.Component{
 }
 
 export default connect(null, {addProject})(ProjectInput)
+// connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
 // component doesnt need to GET state, it just needs to ADD things to state
 // so instead of mapDispatchToProps, we directly import {addProject} -- THUNK -- call dispatch ourselves, inside the addProject fn

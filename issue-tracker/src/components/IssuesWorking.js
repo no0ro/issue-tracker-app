@@ -5,7 +5,7 @@ const IssuesWorking = (props) => {
     return (
         <div>
             {/* <onChange={this.onChange}> */}
-            Inside IssuesWOrking.js
+            <h3>Working: </h3>
         </div>
 
     )
