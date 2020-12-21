@@ -2,7 +2,6 @@ class Api::V1::ProjectsController < ApplicationController
       # namespaced bc of added constroller folders and routes 
 
     def index 
-     
         @projects = Project.all 
         render json: @projects
     end 
@@ -31,7 +30,7 @@ class Api::V1::ProjectsController < ApplicationController
     def update 
         # list = List.find_by(id: params[:id])
         @project = Project.find(params[:id])
-        @project.update(name: params["project"]["name"]) # why need to have ["project"] 1st?
+        @project.update(name: params["project"]["name"]) 
         @project.save
         render json: @project
     end 
