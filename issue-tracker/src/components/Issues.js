@@ -10,6 +10,7 @@ const Issues = (props) => {
     const onChange = () => {
         alert("onChange Test")
         // this.setState({ color: 'green'})
+        // border: '5px solid pink'
         //  <div onClick={this.props.onChange}>
     }
 
@@ -26,19 +27,20 @@ const Issues = (props) => {
     //     }
     // }
 
-    return (
-        <div onClick={() => onChange()}>
-            {props.issues && props.issues.map( (issue) => 
-                <li key={issue.id}>
-                    {issue.description} -  {issue.kind} - {issue.working}  
-                    <Button variant="dark" size="sm" onClick={() => handleDelete(issue)}> x </Button>
-                </li>
-                
-            )}
-            <IssuesWorking />
 
-        </div>
-    );
+    return (
+            <div onClick={() => onChange()}>
+                {props.issues && props.issues.map( (issue) => 
+                    <li key={issue.id}>
+                        {issue.description} -  {issue.kind} - {issue.working}  
+                        <Button variant="dark" size="sm" onClick={() => handleDelete(issue)}> x </Button>
+                    </li>
+                    
+                )}
+                <IssuesWorking />
+        
+            </div>
+        );
 }
 
 export default connect(null, {deleteIssue})(Issues)
@@ -49,3 +51,16 @@ export default connect(null, {deleteIssue})(Issues)
 // if working === true, pass the component to IssuesWorking to Render there 
 
 
+// return (
+//     <div onClick={() => onChange()}>
+//         {props.issues && props.issues.map( (issue) => 
+//             <li key={issue.id}>
+//                 {issue.description} -  {issue.kind} - {issue.working}  
+//                 <Button variant="dark" size="sm" onClick={() => handleDelete(issue)}> x </Button>
+//             </li>
+            
+//         )}
+//         <IssuesWorking />
+
+//     </div>
+// );

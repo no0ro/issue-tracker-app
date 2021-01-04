@@ -10,6 +10,7 @@ export const addIssue = (issue, projectId) => {
         })
         .then(res => res.json())
         .then(project => {
+            // console.log(project) //returns this specific projects object aka List App obj with allll issues too
             if (project.error) {
                 alert(project.error)
             } else {

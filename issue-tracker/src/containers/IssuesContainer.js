@@ -7,7 +7,7 @@ import Issues from '../components/Issues'
 // import Listgroup from 'react-bootstrap/Listgroup'
 
 class IssuesContainer extends React.Component {
-
+// like skeleton for issues - just provides the structure & passes props down from store (passedrenders the component. doesnt 
      render() {
          return (
              <div>
@@ -24,4 +24,7 @@ class IssuesContainer extends React.Component {
 }
 
 export default IssuesContainer
-// project={} comes from /components/Project
+// project={} passed down from /components/Project
+    // so now we're re-passing it down, project={this.props.project} ... in project.js was project={project}
+
+    // {props.issues && props.issues.map( (issue) => {

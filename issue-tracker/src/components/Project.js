@@ -34,3 +34,10 @@ const Project = (props) => {
 }
 
 export default Project
+
+
+{
+  // got props.projects from ProjectContainer.js
+  // where we define project= .... and then this prop is passed down/ referenced by its children
+  /* <IssuesContainer project={project}/><br></br>
+<ProjectEdit project={project}/> */}

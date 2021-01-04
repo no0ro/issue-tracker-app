@@ -16,13 +16,14 @@ class ProjectInput extends React.Component{
 
     // define the fn that will handle the onChange listener
     handleChange = (e) => {
-        // e is auto passed in -- debugger
+        // debugger
        this.setState({
            // name: e.target.value - abstract name out so its not always pointing to the same obj in mem. ggood for scaling and adding other inputs in future
             [e.target.name]: e.target.value 
        })
     }
 
+    // grab data, API CALL, setState to clear form 
     handleSubmit = (e) => {
         // to test e - debugger 
         // create new action that addsProject to db 

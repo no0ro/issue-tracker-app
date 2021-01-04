@@ -7,9 +7,9 @@ export default function projectReducer(state = {projects: []}, action) {
         case 'ADD_PROJECT':
             return {...state, projects: [...state.projects, action.payload]}
         case 'ADD_ISSUE':
-            let projects = state.projects.map(project => {
-                if (project.id === action.payload.id){
-                    return action.payload
+            let projects = state.projects.map(project => { // iterate through store, if existing stores project id equals the project id of the action obj we just passed in (aka the project obj we grabbed from the db with addIssue action)
+                if (project.id === action.payload.id){ //
+                    return action.payload // return match aka the project with the newly added issue
                 } else {
                     return project
                 }

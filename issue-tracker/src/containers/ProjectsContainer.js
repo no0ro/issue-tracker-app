@@ -40,7 +40,7 @@ class ProjectsContainer extends React.Component {
 // 7. (or 3)- getting projects that we're fetching from backend, putting them in our store
 // 1ish. get projects from our redux store
 const mapStateToProps = state => {
-    // give this component, access through props, to the projects inside our state
+// - !!!! give this component, access through props, to the projects inside our state
     // turn data into props for fetchProjects to use
 
     // 8. and then we're mapping those projects to props
@@ -59,3 +59,6 @@ export default connect(mapStateToProps, {fetchProjects})(ProjectsContainer)
 // component doesnt need to GET state, it just needs to ADD things to state
 
 // ask, do we want to map state to props? or dispatch to props? or both?
+
+// DOESNT PASS PROPS bc ProjectInput has local store. so just render component
+// <Route path='/projects/new' component={ProjectInput}/>  
