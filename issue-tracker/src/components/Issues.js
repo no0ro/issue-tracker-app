@@ -27,17 +27,28 @@ const Issues = (props) => {
     //     }
     // }
 
+    const workingOrNot = (issue) => {
+        alert("working clicked!")
+        // debugger
+        // if props.deleteIssue(issue.id, issue.project_id);
+    };
+
 
     return (
-            <div onClick={() => onChange()}>
+        // if this, return issue into working component
+            <div>
+                <ul>
                 {props.issues && props.issues.map( (issue) => 
-                    <li key={issue.id}>
-                        {issue.description} -  {issue.kind} - {issue.working}  
+                    <li key={issue.id} onClick={() => onChange()} style={{backgroundColor: "pink"}}>
+                        {issue.description} -  {issue.kind} - {issue.working}  <br></br>
+                        <Button variant="dark" size="sm" onClick={() => workingOrNot(issue)}> Working </Button>
                         <Button variant="dark" size="sm" onClick={() => handleDelete(issue)}> x </Button>
+                       
                     </li>
-                    
                 )}
-                <IssuesWorking />
+                <br></br>
+                </ul>
+                <IssuesWorking issues={props.issues}/>
         
             </div>
         );
