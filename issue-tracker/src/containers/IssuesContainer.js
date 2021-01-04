@@ -10,7 +10,7 @@ class IssuesContainer extends React.Component {
 // like skeleton for issues - just provides the structure & passes props down from store (passedrenders the component. doesnt 
      render() {
          return (
-             <div>
+             <div style={{color: 'red'}} >
                 <IssueInput project={this.props.project}/><br/>
                 <h3> Issues: </h3>
                 
