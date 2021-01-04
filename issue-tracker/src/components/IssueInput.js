@@ -33,17 +33,6 @@ class IssueInput extends React.Component {
         })
     }
    
- 
-    // <div key={`inline-${'checkbox'}`} className="mb-3">
-    // <Form.Check inline label="working" type={'checkbox'} id={`inline-${'checkbox'}-working`} value={this.state.working} onChange={this.handleChange} />
-    // <Form.Check inline label="done" type={'checkbox'} id={`inline-${'checkbox'}-done`} value={this.state.done} onChange={this.handleChange} />
-    // </div>
-
-
-    // <div key={`inline-${'checkbox'}`} className="mb-3">
-    // <Form.Check inline label="working" type={'checkbox'} id={`inline-${'checkbox'}-working`} value={this.state.working} onChange={this.handleChange} />
-    // </div>
-
     render() {
         return (
             <Card style={{ width: '18rem' }}>
@@ -83,3 +72,18 @@ export default connect(null, {addIssue})(IssueInput)
 
 // The presence of the "checked" property specifies the status. The value is irrelevant/not needed.
 // <input type="checkbox" checked="checked" />
+
+
+
+
+
+// Cooler Ways to do check box -- Tinkering
+    // <div key={`inline-${'checkbox'}`} className="mb-3">
+    // <Form.Check inline label="working" type={'checkbox'} id={`inline-${'checkbox'}-working`} value={this.state.working} onChange={this.handleChange} />
+    // <Form.Check inline label="done" type={'checkbox'} id={`inline-${'checkbox'}-done`} value={this.state.done} onChange={this.handleChange} />
+    // </div>
+
+
+    // <div key={`inline-${'checkbox'}`} className="mb-3">
+    // <Form.Check inline label="working" type={'checkbox'} id={`inline-${'checkbox'}-working`} value={this.state.working} onChange={this.handleChange} />
+    // </div>
