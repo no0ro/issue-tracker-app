@@ -8,25 +8,41 @@ const IssuesWorking = (props) => {
         // let changeColor = props.working === true ? ""
     }
 
-    return ( 
+const issue = props.issue
 
-    <div>
-            <h3>Working: </h3>
-        {props.issues && props.issues.map( (issue) => 
-                <li key={issue.id} onClick={() => onChange()}>
-                        {issue.description} -  {issue.kind} - {issue.working}  
-                        {/* <Button variant="dark" size="sm" onClick={() => handleDelete(issue)}> x </Button> */}
-                    </li>
-                    
-                )}
-        
-            </div>
-        );
+    return ( 
+        <div>
+                <h3>In Profress: {issue}</h3>   
+        </div>
+    );
 }
 
 export default IssuesWorking
 
+
+
+
+
+
+
+
 // pass issues components into this  to render
+
+
+
+
+
+// {props.issues && props.issues.map( (issue) =>
+//     <li key={issue.id} onClick={() => onChange()}>
+//             {issue.description} -  {issue.kind} - {issue.working}  
+//             {/* <Button variant="dark" size="sm" onClick={() => handleDelete(issue)}> x </Button> */}
+//     </li>
+    
+// )} 
+
+
+
+
 
 
 
@@ -43,3 +59,5 @@ export default IssuesWorking
         
 //             </div>
 //         );
+
+    // let filteredIssues = props.issues.filter( issue => issue.working === true)
