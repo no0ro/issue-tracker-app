@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 
 class IssueInput extends React.Component {
+ // LOCAL state. not using redux store. 
+ // SET STATE - giving form state and value make it a controlled form.
 
     state = {
         description: '',
@@ -52,7 +54,7 @@ class IssueInput extends React.Component {
                     <input type="text" name="description" placeholder="Issue Description"  value={this.state.description} onChange={this.handleChange}/>
            
                     <Form.Group id="formGridCheckbox">
-                         <Form.Check type="checkbox" name="working" label="Working" onChange={this.handleChange} />
+                         <Form.Check type="checkbox" name="working" label="Working" checked={this.state.working} onChange={this.handleChange} />
                     </Form.Group>
          
                     <select name="kind" value={this.state.kind} onChange={this.handleChange}>
