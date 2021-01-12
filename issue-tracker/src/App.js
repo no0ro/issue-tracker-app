@@ -5,6 +5,10 @@ import Container from 'react-bootstrap/Container'
 
 class App extends React.Component {
   // 2. renders Projects Container 
+  // state = {
+  //   likes: 0
+  // }
+
   render() {
     return (
       <Container fluid="md">
