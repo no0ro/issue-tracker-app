@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 
 
 const Issues = (props) => {
+    // BELOW - all const fn's are closures
 
     // create fn to handle event
     const onChange = () => {
@@ -19,16 +20,31 @@ const Issues = (props) => {
         props.deleteIssue(issue.id, issue.project_id);
     };
 
-    
+
     const handleWorkingToggle = (issue) => {
         alert("working clicked!")
         let updatedIssue = props.issue.working === true ? false : true
-        this.setState({
-            working: updatedIssue
-        })
+        // this.setState({
+        //     working: updatedIssue
+        // })
     };
 
+    // on click increment by on, key with id to reference specific
+    // const addLike = (issue) => {
+    //     // on click, we will grab the 
+    //     alert("like clicked")
+    //     // console.log(issue)
+    //     // console.log(props)
+    //     console.log(issue)
+    //     let currentLikes = issue.likes
+    //     console.log(currentLikes)
+    //     this.props.onClick(currentLikes)
+    // }
 
+    // {issue.likes}
+    
+    // this.props.likeIncrementer(this.state.likes)
+  
     return (
         // if this, return issue into working component
             <div>
@@ -36,17 +52,18 @@ const Issues = (props) => {
                     {props.issues && props.issues.map( (issue) => 
                             <li key={issue.id} onClick={() => onChange()}  style={{marginBottom: "2.5em"}}>
                            
-                                TYPE: {issue.kind} -> {issue.description} {issue.working} <br></br>  
+                                TYPE: {issue.kind} -> {issue.description} {issue.working} {issue.likes}<br></br>  
 
                                 <Button variant="dark" size="sm" onClick={() => handleWorkingToggle(issue)} > Working </Button>
                                 <Button variant="dark" size="sm" onClick={() => handleDelete(issue)} style={{marginLeft: "2.5em"}}> x </Button>
-                            
-                            </li> 
-                            
+                                <Button variant="dark" size="sm" onClick={issue.addLike} style={{marginLeft: "2.5em"}}> Likes: {issue.likes}  </Button>
+
+                            </li>      
                     )}
                    
                 </ol>
-                <IssuesWorking issue={props.issue}/>
+                <IssuesWorking issuesWorking={props.issue}/>
+
             </div>
         );
 }

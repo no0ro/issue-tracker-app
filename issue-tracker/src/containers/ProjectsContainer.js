@@ -7,8 +7,14 @@ import Project from '../components/Project'
 import ProjectInput from '../components/ProjectInput'
 import NavBar from '../components/NavBar'
 import Homepage from '../components/Homepage'
+import IssuesContainer from '../containers/IssuesContainer'
+import Issues from '../components/Issues'
+
 
 class ProjectsContainer extends React.Component {
+    state = {
+        likes: 0
+    }
    // 2ish. accessing props inside the ProjectsContainer component
 
    // 3. When Component Mounts
@@ -19,6 +25,28 @@ class ProjectsContainer extends React.Component {
         // 4. fetches Projects from our backend -> /actions/fetchProjects.js
     }
 
+    // set state 
+
+
+
+    triggerAddLikeState = () => {
+        alert("inside onLike")
+        this.setState( previousState => {
+            return {
+                likes: previousState.likes + 1 
+            }
+        })
+    }
+
+
+
+
+    // onLike={this.onLikeNewName}
+    // onLikesClick={this.props.handleLikeIncrement}
+    //onClick={this.newHandleLike}
+    // && this.props.likes
+    // like={this.props.likes}
+
     render () {
         // 3ish then sending those projects down to our <Projects /> component
         return (
@@ -28,8 +56,8 @@ class ProjectsContainer extends React.Component {
                 <NavBar/>
                     <Switch>
                         <Route path='/projects/new' component={ProjectInput}/>  
-                        <Route path='/projects/:id' render={(routerProps) => <Project {...routerProps} projects={this.props.projects}/>}/>
-                        <Route exact path='/projects' render={(routerProps) => <Projects {...routerProps} projects={this.props.projects}/>}/>
+                        <Route path='/projects/:id' render={(routerProps) => <Project {...routerProps} projects={this.props.projects} addLike={this.triggerAddLikeState}/>}/>
+                        <Route exact path='/projects' render={(routerProps) => <Projects {...routerProps} projects={this.props.projects} addLike={this.triggerAddLikeState}/>}/>
                         <Route exact path='/' component={Homepage}/>
                     </Switch>
             </div>
@@ -45,7 +73,9 @@ const mapStateToProps = globalState => {
 
     // 8. and then we're mapping those projects to props
     return {
-        projects: globalState.projects
+        projects: globalState.projects,
+        likes: 0 // dont do  
+
         // NOTE: return as {}
     }
 
@@ -54,6 +84,7 @@ const mapStateToProps = globalState => {
 export default connect(mapStateToProps, {fetchProjects})(ProjectsContainer)
 // connect(GET from store, pass actioncreators/reducers)(ProjectsContainer)
 // {fetchProjects} - equivelent to mapping dispatchToProps 
+        // mapDispatchToProps is used for dispatching actions to the store
 
 // connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
 // component doesnt need to GET state, it just needs to ADD things to state
