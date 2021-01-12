@@ -39,13 +39,13 @@ class ProjectsContainer extends React.Component {
 
 // 7. (or 3)- getting projects that we're fetching from backend, putting them in our store
 // 1ish. get projects from our redux store
-const mapStateToProps = state => {
+const mapStateToProps = globalState => {
 // - !!!! give this component, access through props, to the projects inside our state
     // turn data into props for fetchProjects to use
 
     // 8. and then we're mapping those projects to props
     return {
-        projects: state.projects
+        projects: globalState.projects
         // NOTE: return as {}
     }
 
