@@ -1,4 +1,5 @@
 import React from 'react'
+import Issues from './Issues'
 
 
 const IssuesWorking = (props) => {
@@ -8,16 +9,17 @@ const IssuesWorking = (props) => {
         // let changeColor = props.working === true ? ""
     }
 
-const issue = props.issue
-
     return ( 
         <div>
-                <h3>In Profress: {issue}</h3>   
+                <h3>In Proggress: {props.issuesWorking}</h3>   
+                
         </div>
     );
 }
 
 export default IssuesWorking
+
+
 
 
 
