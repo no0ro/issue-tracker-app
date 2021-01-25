@@ -12,9 +12,9 @@ import Issues from '../components/Issues'
 
 
 class ProjectsContainer extends React.Component {
-    state = {
-        likes: 0
-    }
+    // state = {
+    //     likes: 0
+    // }
    // 2ish. accessing props inside the ProjectsContainer component
 
    // 3. When Component Mounts
@@ -29,14 +29,14 @@ class ProjectsContainer extends React.Component {
 
 
 
-    triggerAddLikeState = () => {
-        alert("inside onLike")
-        this.setState( previousState => {
-            return {
-                likes: previousState.likes + 1 
-            }
-        })
-    }
+    // triggerAddLikeState = () => {
+    //     alert("inside onLike")
+    //     this.setState( previousState => {
+    //         return {
+    //             likes: previousState.likes + 1 
+    //         }
+    //     })
+    // }
 
 
 
@@ -74,7 +74,7 @@ const mapStateToProps = globalState => {
     // 8. and then we're mapping those projects to props
     return {
         projects: globalState.projects,
-        likes: 0 // dont do  
+        //likes: 0 // dont do  
 
         // NOTE: return as {}
     }
