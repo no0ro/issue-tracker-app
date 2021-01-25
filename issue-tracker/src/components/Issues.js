@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {deleteIssue} from '../actions/deleteIssue'
 import IssuesWorking from '../components/IssuesWorking'
+import Issue from '../components/Issue'
 import Button from 'react-bootstrap/Button'
 
 
@@ -29,6 +30,17 @@ const Issues = (props) => {
         // })
     };
 
+    const addLike = (issue) => {
+        alert("inside onLike")
+        console.log(issue)
+        
+        this.setState( previousState => {
+            return {
+                likes: previousState.likes + 1 
+            }
+        })
+    }
+
     // on click increment by on, key with id to reference specific
     // const addLike = (issue) => {
     //     // on click, we will grab the 
@@ -50,18 +62,12 @@ const Issues = (props) => {
             <div>
                 <ol>
                     {props.issues && props.issues.map( (issue) => 
-                            <li key={issue.id} onClick={() => onChange()}  style={{marginBottom: "2.5em"}}>
-                           
-                                TYPE: {issue.kind} -> {issue.description} {issue.working} {issue.likes}<br></br>  
-
-                                <Button variant="dark" size="sm" onClick={() => handleWorkingToggle(issue)} > Working </Button>
-                                <Button variant="dark" size="sm" onClick={() => handleDelete(issue)} style={{marginLeft: "2.5em"}}> x </Button>
-                                <Button variant="dark" size="sm" onClick={issue.addLike} style={{marginLeft: "2.5em"}}> Likes: {issue.likes}  </Button>
-
-                            </li>      
+                        <Issue issue={issue} handleWorkingToggle={handleWorkingToggle} handleDelete={handleDelete} addLike={addLike}/>       
                     )}
-                   
+                  
                 </ol>
+
+               
                 <IssuesWorking issuesWorking={props.issue}/>
 
             </div>
