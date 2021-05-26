@@ -7,6 +7,14 @@ import Button from 'react-bootstrap/Button'
 
 
 const Issues = (props) => {
+
+    /*
+        Add hook that on click
+
+        1. get working button activated on click so it doesnt break. 
+        2. do something with it. change color. 
+    */
+
     // BELOW - all const fn's are closures
 
     // create fn to handle event
@@ -23,8 +31,9 @@ const Issues = (props) => {
 
 
     const handleWorkingToggle = (issue) => {
-        alert("working clicked!")
-        let updatedIssue = props.issue.working === true ? false : true
+        alert("maked working!")
+        // let updatedIssue = props.issue.working === true ? false : true
+
         // this.setState({
         //     working: updatedIssue
         // })
@@ -68,7 +77,7 @@ const Issues = (props) => {
                 </ol>
 
                
-                <IssuesWorking issuesWorking={props.issue}/>
+                {/* <IssuesWorking issuesWorking={props.issue}/> */}
 
             </div>
         );
