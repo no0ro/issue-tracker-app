@@ -11,7 +11,7 @@ const IssuesWorking = (props) => {
 
     return ( 
         <div>
-                <h3>In Proggress: {props.issuesWorking}</h3>   
+                <h3>In Progress - Working: {props.issuesWorking}</h3>   
                 
         </div>
     );

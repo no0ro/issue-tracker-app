@@ -5,9 +5,7 @@ import Project from './Project'
 import Listgroup from 'react-bootstrap/Listgroup'
 
 const Projects = (props) => {
-    // console.log(props) // an obj of all the props passed in
     return (
-        // pass state down to Project (got it from props.projects has access to it)
         <div>
         <Listgroup>   
             {props.projects.map(project => 

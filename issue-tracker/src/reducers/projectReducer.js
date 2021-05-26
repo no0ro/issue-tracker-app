@@ -1,15 +1,13 @@
-// update Redux Store
 export default function projectReducer(state = {projects: []}, action) {
-    // 6. action dispatch to reducer and updates Redux store
     switch (action.type){
         case 'FETCH_PROJECTS':
             return {projects: action.payload}
         case 'ADD_PROJECT':
             return {...state, projects: [...state.projects, action.payload]}
         case 'ADD_ISSUE':
-            let projects = state.projects.map(project => { // iterate through store, if existing stores project id equals the project id of the action obj we just passed in (aka the project obj we grabbed from the db with addIssue action)
-                if (project.id === action.payload.id){ //
-                    return action.payload // return match aka the project with the newly added issue
+            let projects = state.projects.map(project => { 
+                if (project.id === action.payload.id){ 
+                    return action.payload 
                 } else {
                     return project
                 }
@@ -34,7 +32,6 @@ export default function projectReducer(state = {projects: []}, action) {
             })
             return {...state, projects: projectsThree}
         default:
-            return state
-            // always want to return SOME version of our state
+            return state 
     }
 }

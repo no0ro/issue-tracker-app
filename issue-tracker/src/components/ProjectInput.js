@@ -1,4 +1,3 @@
-// form to make new Projects. bc form, needs state, so Class
 import React from 'react'
 import {connect} from 'react-redux'
 import {addProject} from '../actions/addProject'

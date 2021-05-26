@@ -7,9 +7,7 @@ class Issue extends React.Component {
         likes: 0
     }
 
-    addLike = () => {
-     
-       
+    addLike = () => {  
         this.setState( previousState => {
             return {
                 likes: previousState.likes + 1 
@@ -32,8 +30,6 @@ class Issue extends React.Component {
                                 <Button variant="dark" size="sm" onClick={() => this.addLike()} style={{marginLeft: "2.5em"}}> Likes: {this.state.likes}  </Button>
 
                 </li>    
-               
-
             </div>
         )
     }
