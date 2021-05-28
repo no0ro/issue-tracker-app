@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button'
 
 
 const Issues = (props) => {
+    // more comments
 
     /*
         Add hook that on click
