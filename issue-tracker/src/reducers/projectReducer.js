@@ -13,6 +13,7 @@ export default function projectReducer(state = {projects: []}, action) {
                 }
             }) 
             // test
+            // testing
             return {...state, projects: projects}
         case 'DELETE_ISSUE':
             let projectsTwo = state.projects.map(project => {
